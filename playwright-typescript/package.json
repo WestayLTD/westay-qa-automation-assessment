@@ -1,17 +1,17 @@
 {
-  "name": "westay-qa-automation-evaluation",
+  "name": "westay-qa-automation-evaluation-typescript",
   "version": "1.0.0",
   "private": true,
   "description": "A simple e-commerce application and Playwright TypeScript assessment for Senior QA Automation Engineers.",
   "scripts": {
-    "start": "node server.cjs",
+    "start": "node ../server.cjs",
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
     "report": "playwright show-report"
   },
   "devDependencies": {
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "1.55.0",
     "@types/node": "^24.3.0",
     "typescript": "^5.9.2"
   }

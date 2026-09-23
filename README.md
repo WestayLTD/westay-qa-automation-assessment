@@ -1,68 +1,55 @@
-# Westay QA Automation Evaluation
+# Westay QA Automation Assessment
 
 ## Overview
 
-This is a practical Playwright exercise for a Senior QA Automation Engineer. The project contains a small e-commerce application and a simple TypeScript automation framework with eight passing starter tests.
+This repository contains a lightweight e-commerce application and two equivalent Playwright starter frameworks for evaluating Senior QA Automation Engineer candidates.
 
 The application flow is:
 
 **Landing Page → Product Listing → Cart → Checkout Success**
 
-## Technology
+The application is shared by both frameworks and stores cart state in the browser's `localStorage`. No database or external server is required.
 
-- HTML, CSS and JavaScript
-- Playwright
-- TypeScript
-- Node.js
+## Choose your language
 
-## Setup and run
+Use the framework that matches your primary automation language:
 
-```bash
-npm install
-npx playwright install chromium
-npm test
+- [Playwright with TypeScript](playwright-typescript/README.md)
+- [Playwright with Python](playwright-python/README.md)
+
+Both versions contain the same Page Objects, the same eight starter tests and the same candidate exercises.
+
+## Repository structure
+
+```text
+app/                         Shared HTML, CSS and JavaScript application
+playwright-typescript/       TypeScript Page Objects, tests and configuration
+playwright-python/           Python Page Objects, tests and configuration
+server.cjs                   Local server used by the TypeScript framework
+README.md                    This language-selection guide
 ```
 
-Playwright starts the application automatically when the tests run. The expected starter result is **8 passed**.
+## Application functionality
 
-To explore the application manually:
+- Product listing with six products
+- Add products to the cart
+- Cart quantity counter
+- Increase, decrease and remove cart items
+- Subtotal, tax and total calculation
+- Checkout-success page
+- Maximum of 2 units of the same product
+- Maximum of 3 unique products
 
-```bash
-npm start
-```
+The last two rules are implemented in the application but intentionally not covered by the starter tests. Candidates are expected to automate them.
 
-Then open `http://127.0.0.1:4173`.
-
-## Existing tests
-
-The starter suite covers basic landing-page navigation, product display, adding products, cart contents, removing a product and subtotal calculation.
-
-## Your tasks
+## Candidate tasks
 
 ### Task 1 — Maximum quantity per product
 
 A customer can add a maximum of **2 units of the same product** to the cart. Any attempt to add more than 2 units should not increase the product quantity.
 
-Identify the scenarios you consider important and add suitable Playwright test coverage.
-
 ### Task 2 — Maximum unique products
 
 The cart can contain a maximum of **3 unique products**. If the customer attempts to add a fourth different product, it should not be added.
 
-Identify the scenarios you consider important and add suitable Playwright test coverage.
-
-## Guidelines
-
-- Extend the existing Playwright framework and follow its simple structure.
-- Keep the tests independent; one test must not depend on another test's state.
-- Use clear test names and appropriate Playwright locators and assertions.
-- You may extend the Page Objects where it improves readability.
-- Keep the solution simple and be ready to explain your decisions.
-
-Useful commands:
-
-```bash
-npm run test:headed
-npm run test:ui
-npm run report
-```
+Candidates should identify the important scenarios and add suitable Playwright test coverage using their selected language framework.
